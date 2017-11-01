@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QQueue>
 
 namespace Ui {
 class MainWindow;
@@ -14,7 +15,10 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+    void calculateTestPassword(QQueue <unsigned short> *ptrComKPIqueue);
+    void makePassword(QQueue <unsigned short> *ptrComKPIqueue, unsigned short int numberOfElement);
+    void calculateTestKS(QQueue <unsigned short> *ptrComKPIqueue);
+    unsigned short calculateKSdata(QQueue <unsigned short> *ptrComKPIqueue, unsigned short int numberOfElement);
     struct Data_const {
         QString name;
         unsigned short addr_st;
